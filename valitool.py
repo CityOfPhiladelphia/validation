@@ -56,8 +56,8 @@ if len(sys.argv) > 1:
                         custom_error[2]['columns'].append(col_count)
                     elif custom == 'lon': # lon refers to any longitude that -could- be in and around Philadelphia
                         del field['constraints']['custom']
-                        field['constraints']['minimum'] = 73
-                        field['constraints']['maximum'] = 77
+                        field['constraints']['maximum'] = -73
+                        field['constraints']['minimum'] = -77
                         custom_error[3]['columns'].append(col_count)
             col_count = col_count + 1
 
