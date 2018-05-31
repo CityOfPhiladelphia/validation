@@ -1,0 +1,125 @@
+{
+  "primaryKey": ["service_request_id"],
+  "fields": [
+    {
+      "name": "the_geom",
+      "type": "string",
+      "constraints": {
+      }
+    },
+    {
+      "name": "lon",
+      "type": "number",
+      "constraints": {
+        "custom": "lon"
+      }
+    },
+    {
+      "name": "objectid",
+      "type": "integer",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "service_request_id",
+      "type": "integer",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "status_notes",
+      "type": "string",
+      "constraints": {
+      }
+    },
+    {
+      "name": "service_name",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "service_code",
+      "type": "string",
+      "constraints": {
+      }
+    },
+    {
+      "name": "agency_responsible",
+      "type": "string",
+      "constraints": {
+      }
+    },
+    {
+      "name": "the_geom_webmercator",
+      "type": "string",
+      "constraints": {
+      }
+    },
+    {
+      "name": "requested_datetime",
+      "type": "datetime",
+      "format": "any",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "updated_datetime",
+      "type": "datetime",
+      "format": "any",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "expected_datetime",
+      "type": "datetime",
+      "format": "any",
+      "constraints": {
+      }
+    },
+    {
+      "name": "address",
+      "type": "string",
+      "constraints": {
+      }
+    },
+    {
+      "name": "zipcode",
+      "type": "string",
+      "constraints": {
+        "custom": "phil_zip"
+      }
+    },
+    {
+      "name": "media_url",
+      "type": "string",
+      "constraints": {
+      }
+    },
+    {
+      "name": "lat",
+      "type": "number",
+      "constraints": {
+        "custom": "lat"
+      }
+    },
+    {
+      "name": "service_notice",
+      "type": "string",
+      "constraints": {
+      }
+    }
+  ]
+}
