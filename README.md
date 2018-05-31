@@ -1,4 +1,4 @@
-This is a script meant to validate tables, specifically .csv files for now, according to a mix of table schema and custom constraints. The script is called in the form of "valitool.py /<csv file/> /<json schema file/>"
+This is a script meant to validate tables, specifically .csv files for now, according to a mix of table schema and custom constraints. The script is called in the form of "valitool.py *.csv *.json"
 
 In terms of table schema, the format is near identical to that of https://frictionlessdata.io/specs/table-schema/. Please refer to there for the basics of schema.
 
