@@ -1,0 +1,15 @@
+code,row,col,value
+phil_tract,2,3,343
+phil_zip,3,2,08260
+lat,3,4,-39.9632709
+lon,3,5,75.2322437
+unique-constraint,4,1,
+phil_zip,4,2,19105
+phil_tract,4,3,9890
+lat,4,4,-75.2322437
+lon,4,5,39.9632709
+required-constraint,6,1,
+phil_zip,6,2,13413
+phil_tract,6,3,4341
+lat,6,4,314
+type-or-format-error,6,5,isg

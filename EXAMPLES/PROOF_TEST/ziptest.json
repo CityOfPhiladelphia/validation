@@ -1,0 +1,46 @@
+{
+  "onwer": "jcv42.phil@gmail.com",
+  "primaryKey": ["key"],
+  "fields": [
+    {
+      "name": "key",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "unique": true
+      }
+    },
+    {
+      "name": "zip",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "custom": "phil_zip"
+      }
+    },
+    {
+      "name": "tract",
+      "type": "string",
+      "constraints": {
+        "required": true,
+        "custom": "phil_tract"
+      }
+    },
+    {
+      "name": "latitude",
+      "type": "number",
+      "constraints": {
+        "required": true,
+        "custom": "lat"
+      }
+    },
+    {
+      "name": "longitude",
+      "type": "number",
+      "constraints": {
+        "required": true,
+        "custom": "lon"
+      }
+    }
+  ]
+}
