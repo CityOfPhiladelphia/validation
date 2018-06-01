@@ -1,5 +1,5 @@
 {
-  "onwer": "owner@email.com",
+  "owner": "owner@email.com",
   "primaryKey": ["key"],
   "fields": [
     {

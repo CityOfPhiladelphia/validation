@@ -25,9 +25,9 @@ def notification(owner,data,pretty,name):
             counts[set['code']] = 1
         else:
             counts[set['code']] = counts[set['code']] + 1
-    body = body + "There were:\n"
+    body = body + "There were:\n" # The body is meant to be very simple to read
     key_num = 1
-    for key,value in counts.items():
+    for key,value in counts.items(): # Make error messages more human readable
         err_type = ""
         if 'constraint' in str(key):
             err_type = str(key)[:str(key).rfind('-')]
@@ -77,7 +77,7 @@ def notification(owner,data,pretty,name):
         csv_str = csv_str + str(line['code']) + ',' + str(line['row']) + ',' + str(line['col']) + ',' + str(line['value']) + '\n'
     with open(name + '_error_dump.csv','w') as fp:
         fp.write(csv_str)
-    with open(name + '_error_dump.csv','r') as fp:
+    with open(name + '_error_dump.csv','r') as fp: # creates and deletes the file to be sent, raw csv
         part = MIMEBase('application', 'octet-stream')
         part.set_payload(fp.read())
         part.add_header('Content-Disposition', "attachment; filename= %s" % name + '_error_dump.csv')
@@ -91,11 +91,11 @@ def notification(owner,data,pretty,name):
 
 def validation(csv,cust):
     inspector = Inspector()
-    inspector.__init__(row_limit=100000,error_limit=100000)
+    inspector.__init__(row_limit=100000,error_limit=100000) # arbitrary row limit
     report = inspector.inspect(csv)
     email_data = []
     pretty_str = ''
-    if not report['valid']:
+    if not report['valid']: # an error report will only be sent if there are issues to be found
         for table in report['tables']:
             s = ast.literal_eval(table['datapackage'])
             filename = s['name'] + "_error_dump.txt"
@@ -113,7 +113,7 @@ def validation(csv,cust):
                             err_str = err_str + " in row " + str(row) + " and column " + str(col) + err['message']
                             code = err['name']
                             #print(code)
-                            break;
+                            break; # multiple codes are possible, but the custom code should be given advantage non-constraints or type errors.
                         elif error['code'] == 'required-constraint':
                             value = ''
                             code = error['code']
@@ -126,7 +126,7 @@ def validation(csv,cust):
                     email_data.append({'code': code, 'row': row, 'col': col, 'value': value})
             notification(owner,email_data,pretty_str,s['name'])
 
-if len(sys.argv) > 1:
+if len(sys.argv) > 2:
     file_name = sys.argv[1]
     config_file = sys.argv[2]
     schema = {}
