@@ -1,4 +1,5 @@
 {
+  "owner": "owner@email.com",
   "primaryKey": ["service_request_id"],
   "fields": [
     {
