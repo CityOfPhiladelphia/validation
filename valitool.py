@@ -161,6 +161,10 @@ if len(sys.argv) > 1:
             col_count = col_count + 1
 
     filename, file_extension = os.path.splitext(file_name)
+    print(filename)
+    f_path = filename.split('/')
+    print(f_path)
+    filename = f_path[len(f_path)-1]
     data_package_json = { "name": filename, "title": filename, "resources": [{"name": filename, "path": file_name, "schema": schema}]}
     # The csv and schema must be loaded together into a datapackage for use with goodtables
     if file_extension == '.csv':
